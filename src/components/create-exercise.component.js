@@ -24,8 +24,8 @@ export default class CreateExercise extends Component {
 
         componentDidMount(){
             this.setState({
-                users:['test user'],
-                username:"test User"
+                users:["Priest"],
+                username:"Priest2"
             })
         }
 
@@ -89,7 +89,7 @@ export default class CreateExercise extends Component {
                                 this.state.users.map(function(user) {
                                     return <option>
                                         key = {user}
-                                        value = {user} > {user} 
+                                        value = {user} {user} 
                                     </option>;
                                 })
 
@@ -103,7 +103,8 @@ export default class CreateExercise extends Component {
                            required
                            className = "form-control"
                            value = {this.state.description}
-                            onChange = {this.state.onChangeDescription}/>
+                            onChange = {this.state.onChangeDescription} 
+                            />
                     </div>
 
                      <div className = "form-group"> 
