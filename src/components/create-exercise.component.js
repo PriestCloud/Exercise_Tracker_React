@@ -13,12 +13,12 @@ export default class CreateExercise extends Component {
         this.onSubmit = this.onSubmit.bind(this);
 
 
-        this.setState = {
-            username:"Priest",
+        this.state = {
+            username:"",
             description:'',
             duration:0,
             date: new Date(),
-            users: ["Ade", "Scottt"]
+            users: []
         }
     }
 
@@ -76,7 +76,6 @@ export default class CreateExercise extends Component {
     render() {
         return (
             <div>
-               (this.state.username == "")?
                 <h3> Create New Exercise </h3>
                 <form onSubmit = {this.onSubmit}>
                     <div className = "form-group">
@@ -124,9 +123,10 @@ export default class CreateExercise extends Component {
                         </div>
                     </div>
                     
-
+                    <div className = "form-group">
+                        <input type = "Submit" value = "Create Exercise Log " className = "btn btn-primary"/>
+                        </div>
                 </form>
-                <div>dfj </div>
                 
             </div> 
         )
