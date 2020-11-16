@@ -76,7 +76,7 @@ export default class CreateExercise extends Component {
     render() {
         return (
             <div>
-               { (this.state.username == "")?
+               (this.state.username == "")?
                 <h3> Create New Exercise </h3>
                 <form onSubmit = {this.onSubmit}>
                     <div className = "form-group">
@@ -125,9 +125,9 @@ export default class CreateExercise extends Component {
                     </div>
                     
 
-                </form>:
+                </form>
                 <div>dfj </div>
-                }
+                
             </div> 
         )
     }
