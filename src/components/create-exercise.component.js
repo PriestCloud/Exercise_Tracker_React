@@ -24,8 +24,8 @@ export default class CreateExercise extends Component {
 
         componentDidMount(){
             this.setState({
-                users:["Priest"],
-                username:"Priest2"
+                users:["Priest", "Priest2", "Priest3", "Priestn"],
+                username:""
             })
         }
 
@@ -67,8 +67,7 @@ export default class CreateExercise extends Component {
                 date:this.setState.date
             }
             console.log(exercise);
-
-            window.location("/");
+            window.location = "/";
         }
 
 
@@ -80,16 +79,15 @@ export default class CreateExercise extends Component {
                 <form onSubmit = {this.onSubmit}>
                     <div className = "form-group">
                         <label> Username: </label>
-                        <select ref = "userInput"
+                        <select
                             required
                             className = "form-control"
                             value = {this.state.username}
-                            onChange = {this.state.onChangeUsername}>
+                            onChange = {this.onChangeUsername}>
                             {
                                 this.state.users.map(function(user) {
-                                    return <option>
-                                        key = {user}
-                                        value = {user} {user} 
+                                    return <option key = {user}>
+                                        {user}  
                                     </option>;
                                 })
 
@@ -103,7 +101,7 @@ export default class CreateExercise extends Component {
                            required
                            className = "form-control"
                            value = {this.state.description}
-                            onChange = {this.state.onChangeDescription} 
+                            onChange = {this.onChangeDescription} 
                             />
                     </div>
 
@@ -112,7 +110,7 @@ export default class CreateExercise extends Component {
                         <input type = "text"
                            className = "form-control"
                            value = {this.state.duration}
-                           onChange = {this.state.onChangeDuration}/>
+                           onChange = {this.onChangeDuration}/>
                     </div>
 
                      <div className = "form-group"> 
@@ -125,7 +123,7 @@ export default class CreateExercise extends Component {
                     </div>
                     
                     <div className = "form-group">
-                        <input type = "Submit" value = "Create Exercise Log " className = "btn btn-primary"/>
+                        <input type = "Submit" value = "Create Exercise Log " onChange = {this.onSubmit} className = "btn btn-primary"/>
                         </div>
                 </form>
                 
