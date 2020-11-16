@@ -43,7 +43,6 @@ export default class CreateExercise extends Component {
             });
         }
 
-
         onChangeDuration(e){
             this.setState({
                 duration:e.target.value
