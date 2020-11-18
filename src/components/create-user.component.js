@@ -21,9 +21,7 @@ export default class CreateUser extends Component {
 
         onSubmit(e){
             e.preventDefault();
-
             const user = this.state.username;
-            
 
             console.log(user);
             
