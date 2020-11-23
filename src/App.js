@@ -14,13 +14,13 @@ function App() {
 
     <React.Fragment>
         <Router> 
-          <div className = "container">
+          <div className = "container-fluid">
             <Navbar/>
             <br/>
-            <Route path = "/edit/:id" exact component = { EditExercise } /> 
-            <Route path = "/create" exact component = { CreateExercise } /> 
-            <Route path = "/user" exact component = { CreateUser } /> 
-            <Route path = "/" exact component = { ExerciseList } />
+            <Route path = "/" exact component = { ExerciseList } />            
+            <Route path = "/edit/:id" component = { EditExercise } /> 
+            <Route path = "/create"  component = { CreateExercise } /> 
+            <Route path = "/user" component = { CreateUser } /> 
             
             
           </div>
