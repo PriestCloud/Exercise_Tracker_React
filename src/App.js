@@ -14,7 +14,7 @@ function App() {
 
     <React.Fragment>
         <Router> 
-          <div className = "container-fluid">
+          <div className = "container">
             <Navbar/>
             <br/>
             <Route path = "/" exact component = { ExerciseList } />            

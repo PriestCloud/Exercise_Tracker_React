@@ -1,28 +1,28 @@
 import React, { Component } from 'react';
-import {link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 
 const Exercise = props => {
-    <tr>
-        <td> props.exercise.username </td>
-        <td> props.exercise.description </td>
-        <td> props.exercise.duration </td>
-        <td> props.exercise.date.subString(0,10) </td>
+   return( <tr>
+        <td> {props.exercise.username} </td>
+        <td> {props.exercise.description} </td>
+        <td> {props.exercise.duration} </td>
+        <td> {props.exercise.date.substring(0,10)} </td>
         <td>
-            <link to={'/edit/'+props.exercise._id}> edit </link> | <a href ="#" onClick = {() => {props.deleteExercise(props.exercise._id) }}> delete </a>
+            <Link to={'/edit/'+props.exercise._id}> edit </Link> | <a href ="#" onClick = {() => {props.deleteExercise(props.exercise._id) }}> delete </a>
         </td>
-    </tr>
+    </tr>)
 }
 
 
 export default class ExerciseList extends Component {
 
     constructor(props){
-
+ 
         super(props);
 
         this.deleteExercise = this.deleteExercise.bind(this);
-        this.state = { exercise : []};
+        this.state = { exercises : []};
 
     }
 
@@ -46,11 +46,11 @@ export default class ExerciseList extends Component {
         })
     }
 
-//    exerciseList(){
-//        return this.exercises.map(currentexercise => {
-//            return <Exercise exercise={currentexercise} deleteExercise={this.deleteExercise} key={currentexercise._id}/>;
-//        })         { this.exerciseList() }
-//    }  
+   exerciseList(){
+       return this.state.exercises.map(currentexercise => {
+           return <Exercise exercise={currentexercise} deleteExercise={this.deleteExercise} key={currentexercise._id}/>;
+       })         
+   }  
 
 render() {
         return(
@@ -65,12 +65,11 @@ render() {
                       <th> Duration </th>
                       <th> Date </th>
                       <th> Actions </th>
-                                            
-                    
                     </tr>
                 </thead>
 
                 <tbody>
+                { this.exerciseList() }
                 </tbody>
                 
                 </table>
